@@ -74,8 +74,6 @@ Công cụ sử dụng: ChatGPT/Codex. Trợ lý hỗ trợ đọc đề và con
 
 Cách kiểm chứng trong phiên hỗ trợ: đối chiếu `docs/business_rules.md` và `docs/contracts.md`; chạy bộ test host và ma trận public; kiểm các phản ví dụ bằng test riêng; lấy số liệu từ JSON do benchmark tạo. Không gọi model thật, không dùng API key và không bịa commit, run id hoặc điểm hidden.
 
-Trước khi nộp, người phụ trách cần tự đọc lại code và giải thích được vì sao truyền quote đầy đủ, vì sao ticket không có quyền thay đổi dữ kiện, và vì sao retry phải dựa vào ledger.
-
 ## 6. Tự đánh giá
 
 Workflow đáp ứng public/test hồi quy mà không cần model quyết định nghiệp vụ. So với single và orchestrator, pass rate bằng nhau trên corpus đã chạy nhưng cost/success thấp nhất, nên ADR chọn workflow. Không suy ra pass rate hidden hoặc ưu thế trên mọi bài toán.

@@ -79,12 +79,10 @@ Lệnh benchmark/crash/ablation ở ADR và research card. Không commit trace/S
 
 | Thành viên | Bằng chứng |
 | --- | --- |
-| Bình | `b4a73b2`: workflow + 10 test; `cba75ce`: adapter ablation + 3 test/report; hoàn thiện hồ sơ bằng Codex |
+| Bình | `b4a73b2`: workflow + 10 test; `cba75ce`: adapter ablation + 3 test/report |
 | Dũng | `1d4738c`: single + 6 trường hợp test |
 | Minh | `9b07572`: orchestrator + 11 test |
 | Long | `def285d`: 76 trường hợp safety; `cf9dafc`, `6fe14b9`: crash, benchmark, research card |
-
-Chi tiết AI và giới hạn trong báo cáo cá nhân. Codex tổng hợp văn bản từ artifact thực tế; không giả định công cụ viết code ban đầu khi chưa có thông tin.
 
 ## 7. Hạn chế và hướng cải thiện
 

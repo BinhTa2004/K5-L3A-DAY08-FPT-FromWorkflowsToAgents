@@ -15,15 +15,21 @@ Ví dụ một dòng đã điền: `- Shape chọn: workflow`, `- Crash safety: 
 
 ## Vì sao shape này
 
-Viết 1 đoạn. So cùng corpus và cùng seed, không so với một lần chạy lẻ.
+Chưa chốt shape và các nhãn số liệu ở trên: cần chờ benchmark chung đủ bốn shape cùng corpus/seed/giá. Không dùng kết quả một shape để tuyên bố đã so sánh toàn bộ kiến trúc.
+
+Workflow là ứng viên đã triển khai: `src/reports/workflow_selfcheck.json` ghi 70/70 trial public pass trên 14 claim × 5 seed, pass rate/pass^5 = 1,0/1,0; seed min–max = 1,0–1,0, variance = 0; cost/success = 27,857142857 VND mô phỏng. Run id ví dụ: `R-workflow-C-001-s11`, `R-workflow-C-014-s11`. Đây là bằng chứng tạm thời cho workflow, không phải benchmark so sánh cuối hoặc điểm hidden.
 
 ## Có đáng đổi lấy multi-agent không
 
-Nếu pass nhỉnh hơn mà cost và variance cao hơn, nhóm giữ hay đổi? Điều kiện nào làm quyết định đảo lại?
+Ưu tiên shape ít tự chủ nhất đáp ứng nghiệp vụ và các cổng an toàn. Chỉ đổi sang single/orchestrator/swarm nếu số đo chung cho thấy lợi ích đủ rõ và nhóm giải thích được chi phí, variance cùng giới hạn. Hiện chưa có dữ liệu so sánh để chốt đánh đổi này.
 
 ## Trace và bằng chứng
 
-Trace của nhóm ghi những event nào? Field nào cố ý **không** ghi, và vì sao? Nếu trace nằm ngoài chỗ scanner quét được, đội security chứng minh thế nào là hệ thống không lộ secret?
+Workflow ghi các event `claim`, `order_scope`, `quote`, `refund_request`, `refund_outcome`, `decision` theo nhánh chạy. Event claim chỉ ghi `found` và `has_order_id`; kiểm scope chỉ ghi `visible` và `reason`. Không ghi ticket, principal, nguyên claim/order, `parent_secret`, header, SĐT, địa chỉ, ghi chú nội bộ hoặc tên hàng.
+
+Trace dùng `Trace(make_run_id(...))`, được ghi cả nhánh trả sớm và khi crash; `finish()` lấy effect/audit thật từ ledger. Shape không tạo debug log ngoài thư mục trace. Test `test_workflow_omits_secrets_pii_and_ticket_from_trace_and_stdout` đặt canary trong ticket, secret, header và PII rồi quét `RunResult`, các file cùng tiền tố run id và stdout/stderr.
+
+Test workflow có ba vị trí crash/resume và kiểm đúng một effect/audit; crash suite `20/20` chính thức và bằng chứng handoff của orchestrator chờ nhóm bổ sung. Chưa có kết quả secret leak/approval bypass của hidden.
 
 ## Giới hạn
 

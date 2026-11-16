@@ -46,7 +46,7 @@ Gợi ý chia vai:
 
 - Hoàng Hải Long bổ sung email và GitHub trong bảng thành viên và báo cáo cá nhân.
 - Các báo cáo cá nhân của Dũng, Minh và Long đổi tiêu đề còn là `MSSV_HoTen` thành MSSV/họ tên thực tế.
-- Cả bốn báo cáo cá nhân hiện còn phần nội dung mẫu; điền phần việc, đóng góp, bằng chứng, công cụ AI và tự đánh giá sau khi thực hiện.
+- Báo cáo cá nhân của Bình đã có phần workflow và kết quả tự kiểm; báo cáo của các thành viên khác cần cập nhật theo công việc thực tế. Phần tổng hợp cuối chờ bàn giao đủ các shape và số liệu chung.
 
 ## Bảng đóng góp
 
@@ -54,7 +54,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| Tạ Công Bình | Workflow, phân công và tổng hợp | Chưa commit phần triển khai; cập nhật hash thật sau khi commit | `src/tests/test_team_workflow.py`: 10 trường hợp; bộ mặc định 64 passed, student workflow 62 passed |
 
 ## Cá nhân
 

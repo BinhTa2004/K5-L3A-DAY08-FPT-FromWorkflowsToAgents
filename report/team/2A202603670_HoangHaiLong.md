@@ -8,8 +8,8 @@ Ví dụ: `20241234_NguyenVanAn.md`.
 
 - Họ tên: Hoàng Hải Long
 - MSSV: 2A202603670
-- Email:
-- GitHub: 
+- Email: 26ai.longhh@vinuni.edu.vn
+- GitHub: https://github.com/hwangron
 
 ## 2. Phần việc phụ trách
 

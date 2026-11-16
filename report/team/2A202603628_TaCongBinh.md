@@ -82,4 +82,4 @@ Workflow đáp ứng public/test hồi quy mà không cần model quyết địn
 
 Benchmark cuối đã có đủ bốn shape, crash suite đạt 20/20. Bộ crash suite của đề kiểm host/swarm, còn test workflow và safety kiểm trực tiếp ba vị trí crash trên shape. Chưa có kết quả hidden 40 claim × 5 seed, không giả lập điểm hidden từ public.
 
-Hồ sơ nhóm đã được cập nhật bằng commit/test/report thực tế. Ablation R4 cho thấy bỏ peer acknowledgement giảm chi phí khoảng 1,77% mà không sửa miss seed 55; kết luận giới hạn ở MockLLM và lời gọi cụ thể này. Việc push và mỗi thành viên nộp LMS cần thực hiện riêng; báo cáo local không chứng minh đã nộp LMS.
+Hồ sơ nhóm đã được cập nhật bằng commit/test/report thực tế. Ablation R4 cho thấy bỏ peer acknowledgement giảm chi phí khoảng 1,77% mà không sửa miss seed 55; kết luận giới hạn ở MockLLM và lời gọi cụ thể này.
